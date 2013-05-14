@@ -12,7 +12,7 @@ using namespace std;
 
 template <class T>
 struct LockedQueue {
-  LockedQueue(int capacity)
+  explicit LockedQueue(int capacity)
     :  capacity(capacity)
   {}
 

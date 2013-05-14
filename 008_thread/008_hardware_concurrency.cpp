@@ -19,9 +19,9 @@ int main() {
             // 1スレッドだけ起動する
   }
 
-  vector<thread> ths;
-  for (size_t i = 0; i < mp; ++i) {
-    ths[i] = thread(worker);
+  vector<thread> ths(mp);
+  for (thread& th : ths) {
+    th = thread(worker);
   }
 
   for (thread& th : ths) {

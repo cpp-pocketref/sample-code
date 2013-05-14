@@ -10,19 +10,19 @@
 
 using namespace std;
 
-void foo(stringstream& ss) {
-  ss << "foo() : " << this_thread::get_id() << endl;
+void foo(ostringstream& os) {
+  os << "foo() : " << this_thread::get_id() << endl;
 }
 
-void bar(stringstream& ss) {
-  ss << "bar() : " << this_thread::get_id() << endl;
+void bar(ostringstream& os) {
+  os << "bar() : " << this_thread::get_id() << endl;
 }
 
 int main() {
-  stringstream ss_foo;
-  stringstream ss_bar;
-  thread th1(foo, ref(ss_foo));
-  thread th2(bar, ref(ss_bar));
+  ostringstream os_foo;
+  ostringstream os_bar;
+  thread th1(foo, ref(os_foo));
+  thread th2(bar, ref(os_bar));
 
   // それぞれのスレッドのIDを取得する
   thread::id id1 = th1.get_id();
@@ -36,7 +36,7 @@ int main() {
   th1.join();
   th2.join();
 
-  cout << ss_foo.str();
-  cout << ss_bar.str();
+  cout << os_foo.str();
+  cout << os_bar.str();
   cout << "main thread : " << this_thread::get_id() << endl;
 }

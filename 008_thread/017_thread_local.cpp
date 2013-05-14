@@ -8,9 +8,6 @@
 #include <utility>
 #include <vector>
 
-// todo gcc 4.8で検証する
-#define thread_local __thread
-
 using namespace std;
 
 static mutex mtx;
@@ -25,9 +22,9 @@ void bar(size_t n) {
   tn += n;
   an += n;
 
-  cout << "static int : " << sn << endl;
-  cout << "thread_local int : " << tn << endl;
-  cout << "int : " << an << endl;
+  cout << "static int : " << sn << ", "
+       << "thread_local int : " << tn << ", "
+       << "int : " << an << endl;
   mtx.unlock();
 }
 
@@ -40,7 +37,7 @@ void foo() {
 int main() {
   vector<thread> ths;
 
-  for (size_t i = 0; i < 4; ++i) {
+  for (size_t i = 0; i < 2; ++i) {
     ths.push_back(thread(foo));
   }
 

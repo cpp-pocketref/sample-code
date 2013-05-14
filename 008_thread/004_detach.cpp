@@ -25,8 +25,7 @@ void bar() {
 } // bar()を抜けてもfooは別スレッドで実行中
 
 int main() {
-  std::promise<void> p;
-  waiter_ = p.get_future();
+  waiter_ = setter_.get_future();
 
   bar();
 

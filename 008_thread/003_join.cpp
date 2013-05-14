@@ -17,7 +17,6 @@ void print(T x) {
 }
 
 void foo() {
-  // 時間のかかる処理
   for (int i = 0; i < 3; ++i) {
     print(i);
   }

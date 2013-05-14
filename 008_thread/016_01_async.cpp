@@ -13,7 +13,7 @@ using namespace std;
 
 int worker(const vector<int>& data) {
   int sum = 0;
-  for (auto i : data) {
+  for (int i : data) {
     //重たい処理
     this_thread::sleep_for(chrono::milliseconds(100));
     sum += i;
