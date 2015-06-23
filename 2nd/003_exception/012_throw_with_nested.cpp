@@ -19,7 +19,7 @@ void print_nested_exception(exception_ptr e) {
     try {
       rethrow_if_nested(e);
     }
-  catch (...) {
+    catch (...) {
       print_nested_exception(current_exception());
     }
   }
@@ -28,7 +28,7 @@ void print_nested_exception(exception_ptr e) {
     try {
       rethrow_if_nested(e);
     }
-  catch (...) {
+    catch (...) {
       print_nested_exception(current_exception());
     }
   }
@@ -39,7 +39,7 @@ int main() {
     try {
       throw xxx();
     }
-  catch (...) {
+    catch (...) {
       throw_with_nested(yyy());
     }
   }
