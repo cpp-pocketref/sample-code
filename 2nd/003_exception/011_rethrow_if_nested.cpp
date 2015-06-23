@@ -16,7 +16,7 @@ int main() {
       try {
         throw xxx();
       }
-    catch (...) {
+      catch (...) {
         throw nested_exception();
       }
     }
@@ -33,11 +33,11 @@ int main() {
       try {
         throw xxx();
       }
-    catch (...) {
+      catch (...) {
         throw_with_nested(yyy());
       }
     }
-  catch (yyy& e) {
+    catch (yyy& e) {
       rethrow_if_nested(e);
       cerr << "no nested_exception" << endl;
     }
