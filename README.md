@@ -6,6 +6,5 @@
 - 安藤 敏彦([andochin](https://github.com/andochin))
 - 一戸 優介([egtra](https://github.com/egtra))
 - 楠田 真矢([nyaocat](https://github.com/nyaocat))
-- 道化師([wraith13](https://github.com/wraith13))
 - 湯朝 剛介([hotwatermorning](https://github.com/hotwatermorning))
 
